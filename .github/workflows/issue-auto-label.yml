@@ -36,7 +36,6 @@ jobs:
 
   test_job3:
     runs-on: ubuntu-latest
-    needs: label
     steps:
     - name: Test echo
       run: |
