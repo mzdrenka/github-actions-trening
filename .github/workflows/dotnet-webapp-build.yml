@@ -13,7 +13,7 @@ jobs:
     name: build-dotnet-webapp
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: dotnet --list-runtimes
       - run: dotnet --list-sdks
       - run: dotnet build
