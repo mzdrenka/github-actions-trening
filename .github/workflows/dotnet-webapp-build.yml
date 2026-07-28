@@ -14,7 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - run: dotnet --list-runtimes
+      - name: dotnet list runetimes
+        id: dotnet_list_runetimes
+        run: dotnet --list-runtimes
       - run: dotnet --list-sdks
       - run: dotnet build
         working-directory: ./dotnetwebapp/MyWebApp
