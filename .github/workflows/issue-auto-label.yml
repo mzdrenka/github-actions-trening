@@ -1,0 +1,20 @@
+name: Auto-describe
+
+on: 
+  issue_comment:
+    types: [created]
+
+jobs:
+  label:
+    permissions: 
+      issues: write
+    runs-on: ubuntu-latest
+    steps:
+    - name: Change label to "auto-assignet"
+      if: startsWith(github.event.comment.body, '/assignet')
+      run: |
+        gh issue edit $ISSUE --add-label "auto-assignet" --repo $REPO
+      env:
+        ISSUE: ${{ github.event.issue.number }}
+        REPO: ${{ github.event.repository.full_name }}
+        GH_TOKEN: ${{ secrets.GUTHUB_TOKEN }}
