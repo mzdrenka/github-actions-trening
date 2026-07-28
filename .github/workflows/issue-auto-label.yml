@@ -18,3 +18,10 @@ jobs:
         ISSUE: ${{ github.event.issue.number }}
         REPO: ${{ github.event.repository.full_name }}
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Test echo
+      run: |
+        echo "MAMA"
