@@ -5,12 +5,12 @@ on:
   workflow_dispatch:
     inputs:
       debug_on:
-        default: 'false'
+        default: 'true'
         description: "Turn on debug"
         type: choice
         options:
-          - true
-          - false
+          - 'true'
+          - 'false'
 
 jobs:
   job1:
