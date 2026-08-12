@@ -1,6 +1,18 @@
 name: Develop in a branch
 
-on: [pull_request, workflow_dispatch]
+on: 
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      debug_on:
+        default: false
+        description: "Turn on debug" 
+        options:
+          - true
+          - false   
+
+env:
+  - ACTIONS_STEP_DEBUG: ${inputs.debug_on}
 
 jobs:
   job1:
