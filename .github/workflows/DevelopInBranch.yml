@@ -5,14 +5,15 @@ on:
   workflow_dispatch:
     inputs:
       debug_on:
-        default: false
-        description: "Turn on debug" 
+        default: 'false'
+        description: "Turn on debug"
+        type: choice
         options:
           - true
-          - false   
+          - false
 
 env:
-  - ACTIONS_STEP_DEBUG: ${inputs.debug_on}
+  ACTIONS_STEP_DEBUG: ${inputs.debug_on}
 
 jobs:
   job1:
