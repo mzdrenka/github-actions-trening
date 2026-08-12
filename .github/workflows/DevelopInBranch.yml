@@ -14,4 +14,4 @@ jobs:
         echo "Przepływ pracy wyzwolony przez zdarzenie '${{ github.event_name }}'."
         echo "Przepływ pracy wyzwolony przez aktora '${{ github.actor }}''."
     - uses: actions/checkout@v4.1.0
-    - uses: devops-actions/actionlint@0.1.2
+    - uses: devops-actions/actionlint@v0.1.12
