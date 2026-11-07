@@ -13,7 +13,7 @@ jobs:
     - name: Change label to "auto-assignet"
       if: startsWith(github.event.comment.body, '/assignet')
       run: |
-        gh issue edit $ISSUE --add-label "auto-assignet" --repo $REPO
+        gh issue edit "$ISSUE" --add-label "auto-assignet" --repo "$REPO"
       env:
         ISSUE: ${{ github.event.issue.number }}
         REPO: ${{ github.event.repository.full_name }}
